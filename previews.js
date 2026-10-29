@@ -1,3 +1,5 @@
+//previews.js
+
 function drawWelcomeScreen() {
   background("#F7D7E8");
 
@@ -5,5 +7,5 @@ function drawWelcomeScreen() {
   fill("#6B4226");
   textAlign(CENTER);
   textSize(48);
-  text("❀ wallpaper creator ❀", 500, 230);
+  text("❀ wallpaper creator ❀", 500, 150);
 }
