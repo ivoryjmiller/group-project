@@ -1,4 +1,0 @@
-//loadStars
-async function loadStars() {
-  
-}

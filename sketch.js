@@ -1,20 +1,43 @@
 //sketch.js
+let screen = "welcome";
+let startbutton;
+
+
+let lavender = "#E6D6FA";
+let pink = "#F9C7D9";
+let peach = "#FFE5BC";
 
 async function setup() {
   createCanvas(1000, 650);
   await loadAssets();
+  await loadArrows();
+
+  startbutton = createImg("assets/startbutton.png", "start");
+  startbutton.position(250, 230);
+  startbutton.size(500, 300);
+  startbutton.mousePressed(startEditing);
 }
 
 function draw() {
-  background(220);
-  drawMenu();
-  drawArrows();
-  drawStars();
+  if (screen === "welcome") {
+    drawWelcomeScreen();
+  } else if (screen === "editor") {
+    background("#FFFFFF");
+    drawMenu();
+    drawStars();
+  }
 }
 
-function mousePressed() {
-  console.log(mouseX, mouseY)
+function startEditing() {
+  startbutton.hide();
+  screen = "editor";
+}
 
+function mousePressed() { 
+  if (screen === "editor") {
+  
+
+console.log(mouseX, mouseY)
   if (
     mouseX >= 0 &&
     mouseX <= 99.46484375 &&
@@ -79,5 +102,6 @@ function mousePressed() {
     mouseY <= 242.93359375
   ) {
     menuState = "otherSelection01"
+    }
   }
 }

@@ -1,5 +1,5 @@
 
-let arrowPointingDown = {
+  let arrowPointingDown = {
   file: null,
 };
 
@@ -7,7 +7,7 @@ let arrowPointingUp = {
   file: null,
 }
 
-async function drawArrows() {
-  arrowPointingDown.file = await loadImage("./_menuArrows/arrowPointingDown.png");
-  arrowPointingUp.file = await loadImage("./_menuArrows/arrowPointingUp.png");
+async function loadArrows() {
+  arrowPointingDown.file = await loadImage("assets/arrowPointingDown.png");
+  arrowPointingUp.file = await loadImage("assets/arrowPointingUp.png");
 }
