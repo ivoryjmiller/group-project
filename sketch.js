@@ -23,8 +23,16 @@ function draw() {
     drawWelcomeScreen();
   } else if (screen === "editor") {  
     background("#FFFFFF");
+
+    push();
+translate(200, 75);
+drawSky();
+drawSun();
+drawMountains();
+pop();
+
     drawMenu();
-    drawStars();
+    //drawStars();
     }
 }
 
