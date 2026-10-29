@@ -1,0 +1,4 @@
+//loadStars
+async function loadStars() {
+  
+}
