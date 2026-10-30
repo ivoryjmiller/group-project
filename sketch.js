@@ -43,12 +43,24 @@ async function setup() {
 function draw() {
   if (screen === "welcome") {
     drawWelcomeScreen();
+
+    
   } else if (screen === "editor") {
     background("#FFFFFF");
+    push();
+    translate(200, 75);
+    drawSky();
+    drawSun();
+    drawMountains();
+    pop();
+
     drawMenu();
     drawStars();
+  
   } else if (screen === "phone") {
     background("#F7D7E8");
+    
+
     drawPhonePreview();
   }
 }
