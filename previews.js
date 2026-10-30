@@ -6,9 +6,12 @@ function drawWelcomeScreen() {
   textAlign(CENTER);
   textSize(48);
   text("❀ wallpaper creator ❀", 500, 230);
+<<<<<<< Updated upstream
 }
 
 function drawPhonePreview() {
   fill("#333333");
   rect(350, 75, 300, 500, 30);
+=======
+>>>>>>> Stashed changes
 }
