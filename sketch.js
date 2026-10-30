@@ -1,4 +1,6 @@
 //sketch.js
+let previewbutton;
+let backbutton;
 let screen = "welcome";
 let startbutton;
 
@@ -16,6 +18,26 @@ async function setup() {
   startbutton.position(250, 230);
   startbutton.size(500, 300);
   startbutton.mousePressed(startEditing);
+  previewbutton = createButton("Phone Preview");
+  previewbutton.position(800, 600);
+  previewbutton.hide();
+  previewbutton.mousePressed(function() {
+    previewbutton.hide();
+    backbutton.show();
+    screen = "phone";
+  });
+
+  backbutton = createImg("assets/backbutton.png", "back");
+  backbutton.position(800, 600);
+  backbutton.size(150, 75);
+  backbutton.hide();
+
+  
+  backbutton.mousePressed(function() {
+    backbutton.hide();
+    previewbutton.show();
+    screen = "editor";
+});
 }
 
 function draw() {
@@ -32,12 +54,16 @@ drawMountains();
 pop();
 
     drawMenu();
-    //drawStars();
-    }
+    drawStars();
+  } else if (screen === "phone") {
+    background("#F7D7E8");
+    drawPhonePreview();
+  }
 }
 
 function startEditing() {
   startbutton.hide();
+  previewbutton.show();
   screen = "editor";
 }
 
