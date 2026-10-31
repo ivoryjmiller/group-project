@@ -32,7 +32,7 @@ async function setup() {
   backbutton.size(150, 75);
   backbutton.hide();
 
-  
+
   backbutton.mousePressed(function() {
     backbutton.hide();
     previewbutton.show();
@@ -55,7 +55,7 @@ function draw() {
     pop();
     
     drawMenu();
-    drawStars();
+    // drawStars();
     drawArrows();
   
   } else if (screen === "phone") {
