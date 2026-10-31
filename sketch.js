@@ -53,13 +53,12 @@ function draw() {
     drawSun();
     drawMountains();
     pop();
-
+    
     drawMenu();
     drawStars();
   
   } else if (screen === "phone") {
     background("#F7D7E8");
-    
 
     drawPhonePreview();
   }
@@ -92,54 +91,47 @@ console.log(mouseX, mouseY)
     mouseY <= 332.02
   ) {
     menuState = "flowerSelection01";
-  }
-  if (
-    mouseX >= 122.77734375 &&
-    mouseX <= 139.8359375 &&
-    mouseY >= 436.28125 &&
-    mouseY <= 454.94921875
-  ) {
-    menuState = "flowerSelection02";
-  }
-  if (
-    mouseX >= 121.6875 &&
-    mouseX <= 137.734375 &&
-    mouseY >= 228.34375 &&
-    mouseY <= 242.93359375
-  ) {
-    menuState = "flowerSelection01";
-  }
-  if (
+
+    // DOWN ARROW
+  } else if (
     mouseX >= 0 &&
     mouseX <= 99.703125 &&
     mouseY >= 335.625 &&
     mouseY <= 371.3984375
   ) {
      menuState = "smiskiSelection";
-  }
-  if (
+  } else if (
     mouseX >= 0 &&
     mouseX <= 99.703125 &&
     mouseY >= 372.60546875 &&
     mouseY <= 404.04296875
   ) {
     menuState = "otherSelection01"
-  }
-  if (
+  } else if (
     mouseX >= 122.77734375 &&
     mouseX <= 139.8359375 &&
     mouseY >= 436.28125 &&
     mouseY <= 454.94921875
   ) {
-    menuState = "otherSelection02"
-  }
-  if (
+    if (menuState === "flowerSelection01") {
+      menuState = "flowerSelection02";
+    } else if (menuState === "otherSelection01") {
+      menuState = "otherSelection02";
+    }
+
+  } 
+
+  // UP ARROW 
+  } else if (
     mouseX >= 121.6875 &&
     mouseX <= 137.734375 &&
     mouseY >= 228.34375 &&
     mouseY <= 242.93359375
   ) {
-    menuState = "otherSelection01"
+    if (menuState === "flowerSelection02") {
+      menuState = "flowerSelection01";
+    } else if (menuState === "otherSelection02") {
+      menuState = "otherSelection01";
     }
   }
 }
