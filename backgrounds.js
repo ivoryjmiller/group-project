@@ -87,10 +87,10 @@ function keyPressed() {
     middleColor = "#ff922b";
     bottomColor = "#ffe45e";
   }
-}
 
 if (key === "3") {
     topColor = "#201b45";
     middleColor = "#70458c";
     bottomColor = "#d98eae";
+    }
   }
