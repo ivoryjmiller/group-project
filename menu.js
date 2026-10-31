@@ -3,7 +3,7 @@
 let menuState = "firstSelection";
 
 function drawMenu() {
-  if (screen === "editor") {
+if (screen === "editor") {
  if (menuState === "firstSelection") {
    image(firstSelection.file, 0, 260, 100, 147);
  } 

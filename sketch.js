@@ -53,13 +53,12 @@ function draw() {
     drawSun();
     drawMountains();
     pop();
-
+    
     drawMenu();
     // drawStars();
   
   } else if (screen === "phone") {
     background("#F7D7E8");
-    
 
     drawPhonePreview();
   }
