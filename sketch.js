@@ -3,6 +3,8 @@ let previewbutton;
 let backbutton;
 let screen = "welcome";
 let startbutton;
+let starType = null;
+let draggableImage;
 
 
 let lavender = "#E6D6FA";
@@ -13,6 +15,7 @@ async function setup() {
   createCanvas(1000, 650);
   await loadAssets();
   await loadArrows();
+  
 
   startbutton = createImg("assets/startbutton.png", "start");
   startbutton.position(250, 230);
@@ -38,6 +41,7 @@ async function setup() {
     previewbutton.show();
     screen = "editor";
 });
+
 }
 
 function draw() {
@@ -55,6 +59,8 @@ function draw() {
     pop();
 
     drawMenu();
+    drawPinkStar();
+    
     // drawStars();
   
   } else if (screen === "phone") {
@@ -69,7 +75,8 @@ function startEditing() {
   startbutton.hide();
   previewbutton.show();
   screen = "editor";
-}
+  }
+
 
 function mousePressed() {
   console.log(mouseX, mouseY);
@@ -84,36 +91,47 @@ function mousePressed() {
       mouseY <= 295.11
     ) {
       menuState = "starSelection01";
+        
+      } else if (
+      mouseX >= 110.1640625 && 
+      mouseX <= 142.30078125 && 
+      mouseY >= 254.60546875 && 
+      mouseY <= 278.71484375) {
+        starType = "pinkStar";
+      }
 
     // FLOWERS
-    } else if (
+    if (
       mouseX >= 0 &&
       mouseX <= 100.40234375 &&
       mouseY >= 298.82 &&
       mouseY <= 332.02
     ) {
       menuState = "flowerSelection01";
+    }
 
     // SMISKI
-    } else if (
+    if (
       mouseX >= 0 &&
       mouseX <= 99.703125 &&
       mouseY >= 335.625 &&
       mouseY <= 371.3984375
     ) {
       menuState = "smiskiSelection";
+    }
 
     // OTHER
-    } else if (
+    if (
       mouseX >= 0 &&
       mouseX <= 99.703125 &&
       mouseY >= 372.60546875 &&
       mouseY <= 404.04296875
     ) {
       menuState = "otherSelection01";
+    }
 
     // DOWN ARROW
-    } else if (
+    if (
       mouseX >= 122.77734375 &&
       mouseX <= 139.8359375 &&
       mouseY >= 436.28125 &&
@@ -124,9 +142,9 @@ function mousePressed() {
       } else if (menuState === "otherSelection01") {
         menuState = "otherSelection02";
       }
-
+    }
     // UP ARROW
-    } else if (
+    if (
       mouseX >= 121.6875 &&
       mouseX <= 137.734375 &&
       mouseY >= 228.34375 &&

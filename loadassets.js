@@ -28,6 +28,11 @@ let otherSelection02 = {
   file: null,
 }
 
+let pinkStar = {
+  file: null,
+} 
+
+
 async function loadAssets() {
   firstSelection.file = await loadImage("assets/firstSelection.png");
   starSelection01.file = await loadImage("assets/starSelection01.png");
@@ -36,6 +41,8 @@ async function loadAssets() {
   smiskiSelection.file = await loadImage("assets/smiskiSelection.png");
   otherSelection01.file = await loadImage("assets/otherSelection01.png");
   otherSelection02.file = await loadImage("assets/otherSelection02.png");
+  pinkStar.file = await loadImage("assets/pinkStar.png");
+  
 }
 
 

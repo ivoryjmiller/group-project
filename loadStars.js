@@ -1,5 +1,7 @@
-async function loadStars() {
-     greenStar.file = await loadImage("assets/greenStar.png");
-     blueStar.file = await loadImage("assets/blueStar.png");
+// load stars
+function drawPinkStar() {
+    if (starType === "pinkStar") {
+        image(pinkStar.file, 400, 500, 100, 100);
+    }
 
 }
