@@ -27,6 +27,36 @@ function drawPhonePreview() {
 
   translate(-200, -75);
   drawPinkStar();
+  drawRedStar();
+  drawLightPinkStar();
+  drawBlueStar();
+
+  // flowers
+  drawlightPinkFlower();
+  drawLilyFlower();
+  drawPinkFlower();
+  drawPinkYellowFlower();
+  drawPinkYellowFlower02();
+  drawSakuraFlower();
+  drawWhiteFlower();
+  drawBlueFlower();
+  drawButtonFlower();
+
+  // smiskis
+  drawairplaneSmiski();
+  drawcatSmiski();
+  drawholahoopSmiski();
+  drawyogaSmiski();
+
+  // other decor
+  drawredHearts();
+  drawpinkHearts();
+  drawheartButtonRed();
+  drawdarkGreenBow();
+  drawgreenButterfly();
+  drawwaxStamp();
+  drawlightGreenBow();
+
   pop();
   drawingContext.restore();
 }
