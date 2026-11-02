@@ -38,14 +38,12 @@ function drawMenu() {
     push();
       image(firstSelection.file, 0, 260, 100, 147);
       image(otherSelection01.file, 110, 240, 35, 200);
-    image(arrowPointingDown.file, 120, 434, 20, 20);
     pop();
   }
   if (menuState === "otherSelection02") {
     push();
       image(firstSelection.file, 0, 260, 100, 147);
       image(otherSelection02.file, 110, 240, 35, 200);
-    image(arrowPointingUp.file, 118, 225, 20, 20);
     pop();
   }
 }
