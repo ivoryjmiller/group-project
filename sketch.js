@@ -494,8 +494,6 @@ function mousePressed() {
     ) {
       if (menuState === "flowerSelection02") {
         menuState = "flowerSelection01";
-      } else if (menuState === "otherSelection02") {
-        menuState = "otherSelection01";
       }
     }
   }
