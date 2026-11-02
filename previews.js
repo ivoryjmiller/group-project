@@ -19,11 +19,14 @@ function drawPhonePreview() {
   drawingContext.rect(375, 100, 250, 450);
   drawingContext.clip();
   push();
-  translate(275, 100);
+  translate(250, 100);
   scale(1);
   drawSky();
   drawSun();
   drawMountains();
+
+  translate(-200, -75);
+  drawPinkStar();
   pop();
   drawingContext.restore();
 }
