@@ -1,3 +1,4 @@
+
 let topColor = "#963bc4";
 let middleColor = "#ff598f";
 let bottomColor = "#ffb347";
@@ -29,6 +30,7 @@ function drawSky() {
     rect(0, y, 500, 4);
   }
 }
+
 function drawSun() {
   sunY = 155 + sin(frameCount * 0.02) * 8;
 
@@ -54,6 +56,7 @@ function drawSun() {
   arc(sunX, sunY + 8, 22, 14, 0, PI);
   noStroke();
 }
+
 function drawMountains() {
   noStroke();
 
@@ -70,8 +73,8 @@ function drawMountains() {
   // Ground
   rect(0, 470, 500, 30);
 }
+
 function keyPressed() {
-    console.log("Key pressed:", key, "Screen:", screen);
   if (screen !== "editor") {
     return;
   }
@@ -88,9 +91,9 @@ function keyPressed() {
     bottomColor = "#ffe45e";
   }
 
-if (key === "3") {
+  if (key === "3") {
     topColor = "#201b45";
     middleColor = "#70458c";
     bottomColor = "#d98eae";
-    }
   }
+}

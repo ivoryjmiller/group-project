@@ -8,24 +8,8 @@ function drawWelcomeScreen() {
   text("❀ wallpaper creator ❀", 500, 230);
 }
 
-function drawPhonePreview() {
-  // phone frame
-  fill("#333333");
-  rect(350, 75, 300, 500, 30);
-
-  // wallpaper inside phone
-  drawingContext.save();
-  drawingContext.beginPath();
-  drawingContext.rect(375, 100, 250, 450);
-  drawingContext.clip();
-  push();
-  translate(250, 100);
-  scale(1);
-  drawSky();
-  drawSun();
-  drawMountains();
-
-  translate(-200, -75);
+// draw all decorations
+function drawPreviewDecorations() {
   drawPinkStar();
   drawRedStar();
   drawLightPinkStar();
@@ -56,6 +40,57 @@ function drawPhonePreview() {
   drawgreenButterfly();
   drawwaxStamp();
   drawlightGreenBow();
+}
+
+function drawPhonePreview() {
+  // phone frame
+  noStroke();
+  fill("#333333");
+  rect(350, 75, 300, 500, 30);
+
+  // keep wallpaper inside phone
+  drawingContext.save();
+  drawingContext.beginPath();
+  drawingContext.rect(375, 100, 250, 450);
+  drawingContext.clip();
+
+  push();
+  translate(250, 100);
+  scale(1);
+
+  drawSky();
+  drawSun();
+  drawMountains();
+
+  translate(-200, -75);
+  drawPreviewDecorations();
+
+  pop();
+  drawingContext.restore();
+}
+
+function drawLaptopPreview() {
+  // laptop frame
+  noStroke();
+  fill("#333333");
+  rect(175, 90, 650, 430, 15);
+
+  // keep wallpaper inside laptop
+  drawingContext.save();
+  drawingContext.beginPath();
+  drawingContext.rect(200, 105, 600, 400);
+  drawingContext.clip();
+
+  push();
+  translate(200, 5);
+  scale(1.2);
+
+  drawSky();
+  drawSun();
+  drawMountains();
+
+  translate(-200, -75);
+  drawPreviewDecorations();
 
   pop();
   drawingContext.restore();

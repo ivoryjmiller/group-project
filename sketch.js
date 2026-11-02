@@ -58,17 +58,30 @@ async function setup() {
   startbutton.position(250, 230);
   startbutton.size(500, 300);
   startbutton.mousePressed(startEditing);
-  previewbutton = createButton("Phone Preview");
+  previewbutton = createImg("assets/phonepreview.png", "Phone Preview");
   previewbutton.position(800, 600);
+  previewbutton.size(150, 65);
   previewbutton.hide();
   previewbutton.mousePressed(function() {
     previewbutton.hide();
+    laptopbutton.hide();
     backbutton.show();
     screen = "phone";
   });
 
+  laptopbutton = createImg("assets/laptoppreview.png", "Laptop Preview");
+  laptopbutton.position(650, 600);
+  laptopbutton.size(150, 65);
+  laptopbutton.hide();
+  laptopbutton.mousePressed(function() {
+    previewbutton.hide();
+    laptopbutton.hide();
+    backbutton.show();
+    screen = "laptop";
+});
+
   backbutton = createImg("assets/backbutton.png", "back");
-  backbutton.position(800, 600);
+  backbutton.position(800, 550);
   backbutton.size(150, 75);
   backbutton.hide();
 
@@ -76,6 +89,7 @@ async function setup() {
   backbutton.mousePressed(function() {
     backbutton.hide();
     previewbutton.show();
+    laptopbutton.show();
     screen = "editor";
 });
 
@@ -134,12 +148,17 @@ function draw() {
     
 
     drawPhonePreview();
+
+  } else if (screen === "laptop") {
+    background("#F7D7E8");
+    drawLaptopPreview();
   }
 }
 
 function startEditing() {
   startbutton.hide();
   previewbutton.show();
+  laptopbutton.show();
   screen = "editor";
   }
 
