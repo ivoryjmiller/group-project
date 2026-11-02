@@ -99,11 +99,12 @@ let yogaSmiski = {
   file: null,
 }
 
+// OTHER FILE UPLOAD
 let redHearts = {
   file: null,
 }
 
-let pinkhearts = {
+let pinkHearts = {
   file: null,
 }
 
@@ -120,6 +121,10 @@ let greenButterfly = {
 }
 
 let waxStamp = {
+  file: null,
+}
+
+let lightGreenBow = {
   file: null,
 }
 
@@ -163,7 +168,7 @@ async function loadAssets() {
   darkGreenBow.file = await loadImage("assets/darkGreenBow.png")
   greenButterfly.file = await loadImage("assets/greenButterfly.png")
   waxStamp.file = await loadImage("assets/waxStamp.png")
-
+  lightGreenBow.file = await loadImage("assets/lightGreenBow.png")
 }
 
 

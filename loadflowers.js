@@ -56,8 +56,8 @@ async function drawPinkFlower() {
     }
 }
 
-async function drawLightPinkFlower() {
-    if (showLightPinkFlower) {
+async function drawlightPinkFlower() {
+    if (showlightPinkFlower) {
         image(lightPinkFlower.file, lightPinkFlowerX, lightPinkFlowerY, lightPinkFlowerWidth, lightPinkFlowerHeight);
     }
 }

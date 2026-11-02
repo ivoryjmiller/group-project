@@ -3,8 +3,6 @@ let previewbutton;
 let backbutton;
 let screen = "welcome";
 let startbutton;
-let starType = null;
-let flowerType = null;
 
 // SHOW STAR VARIABLE 
 let showPinkStar = false;
@@ -13,7 +11,7 @@ let showLightPinkStar = false;
 let showBlueStar = false;
 
 // SHOW FLOWER VARIABLE
-let showLightPinkFlower = false;
+let showlightPinkFlower = false;
 let showLilyFlower = false;
 let showPinkFlower = false;
 let showPinkYellowFlower = false;
@@ -22,6 +20,21 @@ let showSakuraFlower = false;
 let showWhiteFlower = false;
 let showBlueFlower = false;
 let showButtonFlower = false;
+
+// SHOW SMISKI VARIABLE
+let showairplaneSmiski = false;
+let showcatSmiski = false;
+let showholahoopSmiski = false;
+let showyogaSmiski = false;
+
+// SHOW OTHER VARIABLE
+let showredHearts = false;
+let showpinkHearts = false;
+let showheartButtonRed = false;
+let showdarkGreenBow = false;
+let showgreenButterfly = false;
+let showwaxStamp = false;
+let showlightGreenBow = false;
 
 
 let dragging = false;
@@ -90,7 +103,7 @@ function draw() {
     drawBlueStar();
 
     // DRAW FLOWER
-    drawLightPinkFlower();
+    drawlightPinkFlower();
     drawLilyFlower();
     drawPinkFlower();
     drawPinkYellowFlower();
@@ -100,7 +113,20 @@ function draw() {
     drawBlueFlower();
     drawButtonFlower();
 
-    
+    // DRAW SMISKI
+    drawairplaneSmiski();
+    drawcatSmiski();
+    drawholahoopSmiski();
+    drawyogaSmiski();
+
+    // DRAW OTHER
+    drawredHearts();
+    drawpinkHearts();
+    drawheartButtonRed();
+    drawdarkGreenBow();
+    drawgreenButterfly();
+    drawwaxStamp();
+    drawlightGreenBow();
     // drawStars();
   
   } else if (screen === "phone") {
@@ -278,7 +304,7 @@ function mousePressed() {
         mouseX <= 138.578125 && 
         mouseY >= 348.96484375&& 
         mouseY <= 370.23046875) {
-          showLightPinkFlower = true;
+          showlightPinkFlower = true;
         }
           // LOADING BUTTON FLOWER
           else if (
@@ -334,7 +360,7 @@ function mousePressed() {
           // MAKING FLOWERS DRAGGABLE
             // MAKING LIGHT PINK FLOWER DRAGGABLE
             if (
-              showLightPinkFlower &&
+              showlightPinkFlower &&
               mouseX >= lightPinkFlowerX && 
               mouseX <= lightPinkFlowerX + lightPinkFlowerWidth &&
               mouseY >= lightPinkFlowerY && 
@@ -369,7 +395,7 @@ function mousePressed() {
               mouseY <= PinkFlowerY + PinkFlowerHeight
             ) {
                 dragging = true;
-                draggingAsset = "pinkFlower";
+                draggingAsset = "PinkFlower";
                 offsetX = mouseX - PinkFlowerX;
                 offsetY = mouseY - PinkFlowerY;
               } 
@@ -413,18 +439,18 @@ function mousePressed() {
                 offsetY = mouseY - sakuraFlowerY;
               } 
             // MAKING WHITE FLOWER DRAGGABLE
-            else if (
-              showWhiteFlower &&
-              mouseX >= whiteFlowerX && 
-              mouseX <= whiteFlowerX + whiteFlowerWidth &&
-              mouseY >= whiteFlowerY && 
-              mouseY <= whiteFlowerY + whiteFlowerHeight
-            ) {
+            if (
+                showWhiteFlower &&
+                mouseX >= whiteFlowerX &&
+                mouseX <= whiteFlowerX + whiteFlowerWidth &&
+                mouseY >= whiteFlowerY &&
+                mouseY <= whiteFlowerY + whiteFlowerHeight
+              ) {
                 dragging = true;
                 draggingAsset = "whiteFlower";
                 offsetX = mouseX - whiteFlowerX;
                 offsetY = mouseY - whiteFlowerY;
-              } 
+              }
             // MAKING BLUE FLOWER DRAGGABLE
             else if (
               showBlueFlower &&
@@ -452,7 +478,7 @@ function mousePressed() {
                 offsetY = mouseY - buttonFlowerY;
               } 
 
-    // SMISKI
+    // SMISKIS
     if (
       mouseX >= 0 &&
       mouseX <= 99.703125 &&
@@ -461,6 +487,41 @@ function mousePressed() {
     ) {
       menuState = "smiskiSelection";
     }
+    // LOAD SMISKIS
+    else if (
+          menuState === "smiskiSelection" &&
+          mouseX >= 116.3125   && 
+          mouseX <= 133.4453125  && 
+          mouseY >= 398.38671875 && 
+          mouseY <= 432.5625) {
+            showairplaneSmiski = true;
+          }
+    else if (
+      menuState === "smiskiSelection" &&
+          mouseX >= 121.71875  && 
+          mouseX <= 138.08203125  && 
+          mouseY >= 294.88671875 && 
+          mouseY <= 334.75) {
+            showcatSmiski = true;
+          }
+    else if (
+      menuState === "smiskiSelection" &&
+          mouseX >= 121.47265625   && 
+          mouseX <= 136.91015625  && 
+          mouseY >= 343.62890625 && 
+          mouseY <= 387.6953125) {
+            showholahoopSmiski = true;
+          }
+          else if (
+      menuState === "smiskiSelection" &&
+          mouseX >= 116.2109375   && 
+          mouseX <= 138.265625  && 
+          mouseY >= 248.32421875 && 
+          mouseY <= 282.1328125) {
+            showyogaSmiski = true;
+          }
+
+
 
     // OTHER
     if (
@@ -471,6 +532,63 @@ function mousePressed() {
     ) {
       menuState = "otherSelection01";
     }
+    else if (
+      menuState === "otherSelection01" &&
+          mouseX >= 115.1640625   && 
+          mouseX <= 140.2890625  && 
+          mouseY >= 242.7265625 && 
+          mouseY <= 263.53125) {
+            showredHearts = true;
+          }
+    else if (
+      menuState === "otherSelection01" &&
+          mouseX >= 117.63671875   && 
+          mouseX <= 138.26171875  && 
+          mouseY >= 272.54296875 && 
+          mouseY <= 293.203125) {
+            showpinkHearts = true;
+          }
+    else if (
+      menuState === "otherSelection01" &&
+          mouseX >= 118.0703125   && 
+          mouseX <= 138.08984375  && 
+          mouseY >= 327.5546875 && 
+          mouseY <= 350.45703125) {
+            showdarkGreenBow = true;
+          }
+    else if (
+      menuState === "otherSelection01" &&
+          mouseX >= 114.625  && 
+          mouseX <= 139.2421875  && 
+          mouseY >= 361.56640625 && 
+          mouseY <= 383.80078125) {
+            showgreenButterfly = true;
+          }   
+    else if (
+      menuState === "otherSelection01" &&
+          mouseX >= 120.6171875   && 
+          mouseX <= 137.875  && 
+          mouseY >= 392.08984375 && 
+          mouseY <= 410.1328125) {
+            showwaxStamp = true;
+          }    
+    else if (
+      menuState === "otherSelection01" &&
+          mouseX >= 116.9375   && 
+          mouseX <= 137.875  && 
+          mouseY >= 300.21875 && 
+          mouseY <= 321.05078125) {
+            showheartButtonRed = true;
+          }    
+    else if (
+      menuState === "otherSelection01" &&
+          mouseX >= 117.21875   && 
+          mouseX <= 139.9609375  && 
+          mouseY >= 415.50390625 && 
+          mouseY <= 429.61328125) {
+            showlightGreenBow = true;
+          }    
+
 
     // DOWN ARROW
     if (
@@ -481,10 +599,8 @@ function mousePressed() {
     ) {
       if (menuState === "flowerSelection01") {
         menuState = "flowerSelection02";
-      } else if (menuState === "otherSelection01") {
-        menuState = "otherSelection02";
-      }
     }
+  }
     // UP ARROW
     if (
       mouseX >= 121.6875 &&
@@ -496,8 +612,153 @@ function mousePressed() {
         menuState = "flowerSelection01";
       }
     }
-  }
-}
+
+    // MAKING SMISKIS DRAGGABLE
+          if (
+        showairplaneSmiski &&
+        mouseX >= airplaneSmiskiX &&
+        mouseX <= airplaneSmiskiX + airplaneSmiskiWidth &&
+        mouseY >= airplaneSmiskiY &&
+        mouseY <= airplaneSmiskiY + airplaneSmiskiHeight
+      ) {
+        dragging = true;
+        draggingAsset = "airplaneSmiski";
+        offsetX = mouseX - airplaneSmiskiX;
+        offsetY = mouseY - airplaneSmiskiY;
+      }
+
+      else if (
+        showcatSmiski &&
+        mouseX >= catSmiskiX &&
+        mouseX <= catSmiskiX + catSmiskiWidth &&
+        mouseY >= catSmiskiY &&
+        mouseY <= catSmiskiY + catSmiskiHeight
+      ) {
+        dragging = true;
+        draggingAsset = "catSmiski";
+        offsetX = mouseX - catSmiskiX;
+        offsetY = mouseY - catSmiskiY;
+      }
+
+      else if (
+        showholahoopSmiski &&
+        mouseX >= holahoopSmiskiX &&
+        mouseX <= holahoopSmiskiX + holahoopSmiskiWidth &&
+        mouseY >= holahoopSmiskiY &&
+        mouseY <= holahoopSmiskiY + holahoopSmiskiHeight
+      ) {
+        dragging = true;
+        draggingAsset = "holahoopSmiski";
+        offsetX = mouseX - holahoopSmiskiX;
+        offsetY = mouseY - holahoopSmiskiY;
+      }
+
+      else if (
+        showyogaSmiski &&
+        mouseX >= yogaSmiskiX &&
+        mouseX <= yogaSmiskiX + yogaSmiskiWidth &&
+        mouseY >= yogaSmiskiY &&
+        mouseY <= yogaSmiskiY + yogaSmiskiHeight
+      ) {
+        dragging = true;
+        draggingAsset = "yogaSmiski";
+        offsetX = mouseX - yogaSmiskiX;
+        offsetY = mouseY - yogaSmiskiY;
+      }
+
+      // MAKING OTHER DRAGGABLE
+        if (
+          showredHearts &&
+          mouseX >= redHeartsX &&
+          mouseX <= redHeartsX + redHeartsWidth &&
+          mouseY >= redHeartsY &&
+          mouseY <= redHeartsY + redHeartsHeight
+        ) {
+          dragging = true;
+          draggingAsset = "redHearts";
+          offsetX = mouseX - redHeartsX;
+          offsetY = mouseY - redHeartsY;
+        }
+
+        else if (
+          showpinkHearts &&
+          mouseX >= pinkHeartsX &&
+          mouseX <= pinkHeartsX + pinkHeartsWidth &&
+          mouseY >= pinkHeartsY &&
+          mouseY <= pinkHeartsY + pinkHeartsHeight
+        ) {
+          dragging = true;
+          draggingAsset = "pinkHearts";
+          offsetX = mouseX - pinkHeartsX;
+          offsetY = mouseY - pinkHeartsY;
+        }
+
+        else if (
+          showheartButtonRed &&
+          mouseX >= heartButtonRedX &&
+          mouseX <= heartButtonRedX + heartButtonRedWidth &&
+          mouseY >= heartButtonRedY &&
+          mouseY <= heartButtonRedY + heartButtonRedHeight
+        ) {
+          dragging = true;
+          draggingAsset = "heartButtonRed";
+          offsetX = mouseX - heartButtonRedX;
+          offsetY = mouseY - heartButtonRedY;
+        }
+
+        else if (
+          showdarkGreenBow &&
+          mouseX >= darkGreenBowX &&
+          mouseX <= darkGreenBowX + darkGreenBowWidth &&
+          mouseY >= darkGreenBowY &&
+          mouseY <= darkGreenBowY + darkGreenBowHeight
+        ) {
+          dragging = true;
+          draggingAsset = "darkGreenBow";
+          offsetX = mouseX - darkGreenBowX;
+          offsetY = mouseY - darkGreenBowY;
+        }
+
+        else if (
+          showgreenButterfly &&
+          mouseX >= greenButterflyX &&
+          mouseX <= greenButterflyX + greenButterflyWidth &&
+          mouseY >= greenButterflyY &&
+          mouseY <= greenButterflyY + greenButterflyHeight
+        ) {
+          dragging = true;
+          draggingAsset = "greenButterfly";
+          offsetX = mouseX - greenButterflyX;
+          offsetY = mouseY - greenButterflyY;
+        }
+
+        else if (
+          showwaxStamp &&
+          mouseX >= waxStampX &&
+          mouseX <= waxStampX + waxStampWidth &&
+          mouseY >= waxStampY &&
+          mouseY <= waxStampY + waxStampHeight
+        ) {
+          dragging = true;
+          draggingAsset = "waxStamp";
+          offsetX = mouseX - waxStampX;
+          offsetY = mouseY - waxStampY;
+        }
+
+        else if (
+          showlightGreenBow &&
+          mouseX >= lightGreenBowX &&
+          mouseX <= lightGreenBowX + lightGreenBowWidth &&
+          mouseY >= lightGreenBowY &&
+          mouseY <= lightGreenBowY + lightGreenBowHeight
+        ) {
+          dragging = true;
+          draggingAsset = "lightGreenBow";
+          offsetX = mouseX - lightGreenBowX;
+          offsetY = mouseY - lightGreenBowY;
+        }
+      } 
+    }
 
   function mouseDragged() {
     if (dragging) {
@@ -520,9 +781,9 @@ function mousePressed() {
       }
 
       // DRAGGING FLOWERS
-      if (draggingAsset === "pinkFlower") {
-        pinkFlowerX = mouseX - offsetX;
-        pinkFlowerY = mouseY - offsetY;
+      if (draggingAsset === "PinkFlower") {
+        PinkFlowerX = mouseX - offsetX;
+        PinkFlowerY = mouseY - offsetY;
       }
       if (draggingAsset === "LilyFlower") {
         LilyFlowerX = mouseX - offsetX;
@@ -556,7 +817,54 @@ function mousePressed() {
         buttonFlowerX = mouseX - offsetX;
         buttonFlowerY = mouseY - offsetY;
       }
+      // DRAGGING SMISKIS
+      if (draggingAsset === "airplaneSmiski") {
+        airplaneSmiskiX = mouseX - offsetX;
+        airplaneSmiskiY = mouseY - offsetY;
+      }
+      if (draggingAsset === "catSmiski") {
+        catSmiskiX = mouseX - offsetX;
+        catSmiskiY = mouseY - offsetY;
+      }
+      if (draggingAsset === "yogaSmiski") {
+        yogaSmiskiX = mouseX - offsetX;
+        yogaSmiskiY = mouseY - offsetY;
+      }
+      if (draggingAsset === "holahoopSmiski") {
+        holahoopSmiskiX = mouseX - offsetX;
+        holahoopSmiskiY = mouseY - offsetY;
+      }
+      
+      // DRAGGING OTHER
+      if (draggingAsset === "redHearts") {
+        redHeartsX = mouseX - offsetX;
+        redHeartsY = mouseY - offsetY;
+      }
+      if (draggingAsset === "pinkHearts") {
+        pinkHeartsX = mouseX - offsetX;
+        pinkHeartsY = mouseY - offsetY;
+      }
+      if (draggingAsset === "heartButtonRed") {
+        heartButtonRedX = mouseX - offsetX;
+        heartButtonRedY = mouseY - offsetY;
+      }
+      if (draggingAsset === "darkGreenBow") {
+        darkGreenBowX = mouseX - offsetX;
+        darkGreenBowY = mouseY - offsetY;
+      }
+      if (draggingAsset === "greenButterfly") {
+        greenButterflyX = mouseX - offsetX;
+        greenButterflyY = mouseY - offsetY;
+      }
+      if (draggingAsset === "waxStamp") {
+        waxStampX = mouseX - offsetX;
+        waxStampY = mouseY - offsetY;
+      }
+      if (draggingAsset === "lightGreenBow") {
+        lightGreenBowX = mouseX - offsetX;
+        lightGreenBowY = mouseY - offsetY;
     }
+   }
   }
      
   
