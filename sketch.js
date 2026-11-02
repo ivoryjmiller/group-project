@@ -95,6 +95,15 @@ function draw() {
     drawMountains();
     pop();
 
+    // Background instructions above the wallpaper
+    push();
+    noStroke();
+    fill("#542344");
+    textAlign(LEFT, CENTER);
+    textSize(16);
+    text("Press 1, 2, or 3 to choose a background", 200, 45);
+    pop();
+
     drawMenu();
     // DRAW STARS
     drawPinkStar();
